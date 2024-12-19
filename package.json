@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite", 
-    "build": "vite build", 
-    "serve": "vite preview", 
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
     "sass": "sass --watch src/scss:src/css"
   },
   "dependencies": {
