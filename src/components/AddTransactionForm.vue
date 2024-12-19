@@ -1,7 +1,6 @@
 <template>
   <div>
     <h2>Добавить новую транзакцию</h2>
-
     <div class="addBox">
       <form @submit.prevent="submitForm">
         <div>
