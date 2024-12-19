@@ -1,4 +1,11 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vite/client"]
+  },
   "files": [],
   "references": [
     {
@@ -6,11 +13,6 @@
     },
     {
       "path": "./tsconfig.app.json"
-    },
-    {
-      "compilerOptions": {
-        "types": ["vite/client"]
-      }
     }
   ]
 }

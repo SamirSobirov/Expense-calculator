@@ -10,7 +10,6 @@ const financeStore = useFinanceStore();
 onMounted(() => {
   financeStore.loadTransactions();
 });
-
 const addTransaction = (transaction: any) => {
   financeStore.addTransaction(transaction);
 };
@@ -19,7 +18,6 @@ const addTransaction = (transaction: any) => {
 <template>
   <div class="app">
     <h1>Калькулятор расходов</h1>
-
     <AddTransactionForm @add-transaction="addTransaction" />
     <TransactionList :transactions="financeStore.transactions" />
     <BalanceSummary :balance="financeStore.balance" />
@@ -30,6 +28,5 @@ const addTransaction = (transaction: any) => {
 .app {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
 }
 </style>
