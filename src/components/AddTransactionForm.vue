@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 style="color: brown;">Добавить новую транзакцию</h3>
+    <h3 style="color: brown">Добавить новую транзакцию</h3>
     <div class="addBox">
       <form @submit.prevent="submitForm">
         <div>
@@ -66,12 +66,12 @@ const submitForm = () => {
   form {
     display: flex;
     gap: 20px;
-    
+
     div {
       display: flex;
       gap: 5px;
       align-items: center;
-      justify-content: center;  
+      justify-content: center;
     }
   }
   #category {
@@ -80,7 +80,7 @@ const submitForm = () => {
   }
 
   #amount {
-     width: 120px;
+    width: 120px;
     height: 30px;
   }
   #date {
