@@ -3,12 +3,10 @@ import { ref } from "vue";
 import { defineEmits } from "vue";
 
 const emit = defineEmits(["add-transaction"]);
-
 const type = ref("income");
 const amount = ref(0);
 const category = ref("");
 const date = ref(new Date().toISOString().split("T")[0]);
-
 const categories = ["Еда", "Транспорт", "Развлечения", "Зарплата"];
 
 const submitForm = () => {
@@ -27,27 +25,50 @@ const submitForm = () => {
 <template>
   <div>
     <h2>Добавить новую транзакцию</h2>
+
+    <div class="addBox">
     <form @submit.prevent="submitForm">
+      <div>
       <label for="type">Тип:</label>
       <select v-model="type" id="type">
         <option value="income">Доход</option>
         <option value="expense">Расход</option>
       </select>
+    </div>
 
+      <div>
       <label for="amount">Сумма:</label>
       <input v-model="amount" type="number" id="amount" required />
+    </div>
 
+    <div>
       <label for="category">Категория:</label>
       <select v-model="category" id="category">
         <option v-for="cat in categories" :key="cat" :value="cat">
           {{ cat }}
         </option>
       </select>
+    </div>
 
+    <div>
       <label for="date">Дата:</label>
       <input v-model="date" type="date" id="date" />
-
+    </div>
       <button type="submit">Добавить</button>
     </form>
   </div>
+  </div>
 </template>
+
+<style lang="scss">
+  .addBox {
+    align-items: center;
+    justify-content: center;
+;
+    form {
+      display: flex;
+      gap: 20px
+    }
+  }
+</style>
+

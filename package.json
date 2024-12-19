@@ -4,11 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "sass": "sass --watch src/scss:src/css"
   },
   "dependencies": {
     "pinia": "^2.3.0",
@@ -22,6 +18,7 @@
     "@vue/compiler-sfc": "^3.5.13",
     "@vue/tsconfig": "^0.7.0",
     "npm-run-all2": "^7.0.1",
+    "sass-embedded": "^1.83.0",
     "typescript": "~5.6.3",
     "vite": "^6.0.1",
     "vite-plugin-vue-devtools": "^7.6.5",

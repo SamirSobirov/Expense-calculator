@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, defineComponent } from "vue";
+import { onMounted } from "vue";
 import AddTransactionForm from "./components/AddTransactionForm.vue";
 import TransactionList from "./components/TransactionList.vue";
 import BalanceSummary from "./components/BalanceSummary.vue";
@@ -26,7 +26,7 @@ const addTransaction = (transaction: any) => {
 
 <style scoped>
 .app {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 </style>
