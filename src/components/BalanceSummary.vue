@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { balance } = defineProps<{ balance: number }>();
-
 </script>
 
 <template>

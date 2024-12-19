@@ -2,19 +2,19 @@
 interface Transaction {
   id: string;
   date: string;
-  type: 'income' | 'expense';
+  type: "income" | "expense";
   amount: number;
   category: string;
 }
 
 export default {
-  name: 'TransactionList',
+  name: "TransactionList",
 
   props: {
     transactions: {
-      type: Array as () => Transaction[], 
-      required: true
-    }
+      type: Array as () => Transaction[],
+      required: true,
+    },
   },
 
   computed: {
@@ -22,8 +22,8 @@ export default {
       return this.transactions.filter((transaction) => {
         return transaction.type === "income" || transaction.type === "expense";
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -32,7 +32,7 @@ export default {
     <h2>История транзакций</h2>
     <div v-for="transaction in filteredTransactions" :key="transaction.id">
       <div>
-        {{ transaction.date }} - {{ transaction.type }} - 
+        {{ transaction.date }} - {{ transaction.type }} -
         {{ transaction.amount }} ₽ - {{ transaction.category }}
       </div>
     </div>

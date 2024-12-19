@@ -1,27 +1,26 @@
-// src/stores/useFinanceStore.ts
-import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
+import { defineStore } from "pinia";
+import { ref, computed } from "vue";
 
 export interface Transaction {
   id: string;
-  type: 'income' | 'expense';
+  type: "income" | "expense";
   amount: number;
   category: string;
   date: string;
 }
 
-export const useFinanceStore = defineStore('finance', () => {
+export const useFinanceStore = defineStore("finance", () => {
   const transactions = ref<Transaction[]>([]);
 
   const loadTransactions = () => {
-    const saved = localStorage.getItem('transactions');
+    const saved = localStorage.getItem("transactions");
     if (saved) {
       transactions.value = JSON.parse(saved);
     }
   };
 
   const saveTransactions = () => {
-    localStorage.setItem('transactions', JSON.stringify(transactions.value));
+    localStorage.setItem("transactions", JSON.stringify(transactions.value));
   };
 
   const addTransaction = (transaction: Transaction) => {
@@ -29,17 +28,25 @@ export const useFinanceStore = defineStore('finance', () => {
     saveTransactions();
   };
 
-  const filteredTransactions = (type: 'all' | 'income' | 'expense', category: string) => {
+  const filteredTransactions = (
+    type: "all" | "income" | "expense",
+    category: string
+  ) => {
     return transactions.value.filter((transaction) => {
-      const matchesType = type === 'all' || transaction.type === type;
-      const matchesCategory = category === '' || transaction.category === category;
+      const matchesType = type === "all" || transaction.type === type;
+      const matchesCategory =
+        category === "" || transaction.category === category;
       return matchesType && matchesCategory;
     });
   };
 
   const balance = computed(() => {
-    const totalIncome = transactions.value.filter(t => t.type === 'income').reduce((acc, t) => acc + t.amount, 0);
-    const totalExpense = transactions.value.filter(t => t.type === 'expense').reduce((acc, t) => acc + t.amount, 0);
+    const totalIncome = transactions.value
+      .filter((t) => t.type === "income")
+      .reduce((acc, t) => acc + t.amount, 0);
+    const totalExpense = transactions.value
+      .filter((t) => t.type === "expense")
+      .reduce((acc, t) => acc + t.amount, 0);
     return totalIncome - totalExpense;
   });
 
@@ -48,6 +55,6 @@ export const useFinanceStore = defineStore('finance', () => {
     loadTransactions,
     addTransaction,
     filteredTransactions,
-    balance
+    balance,
   };
 });
