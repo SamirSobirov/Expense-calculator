@@ -2,9 +2,9 @@
   <div>
     <h2>История транзакций</h2>
     <div v-for="transaction in filteredTransactions" :key="transaction.id">
-      <div>
+      <div class="transaction">
         {{ transaction.date }} - {{ transaction.type }} -
-        {{ transaction.amount }} ₽ - {{ transaction.category }}
+        {{ transaction.amount }} $ - {{ transaction.category }}
       </div>
     </div>
   </div>
@@ -37,3 +37,13 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss" scoped>
+.transaction {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+</style>

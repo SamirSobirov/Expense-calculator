@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Добавить новую транзакцию</h2>
+    <h3 style="color: brown;">Добавить новую транзакцию</h3>
     <div class="addBox">
       <form @submit.prevent="submitForm">
         <div>
