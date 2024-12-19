@@ -1,0 +1,53 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { defineEmits } from "vue";
+
+const emit = defineEmits(["add-transaction"]);
+
+const type = ref("income");
+const amount = ref(0);
+const category = ref("");
+const date = ref(new Date().toISOString().split("T")[0]);
+
+const categories = ["Еда", "Транспорт", "Развлечения", "Зарплата"];
+
+const submitForm = () => {
+  const transaction = {
+    id: new Date().getTime().toString(),
+    type: type.value,
+    amount: Number(amount.value),
+    category: category.value,
+    date: date.value,
+  };
+
+  emit("add-transaction", transaction);
+};
+</script>
+
+<template>
+  <div>
+    <h2>Добавить новую транзакцию</h2>
+    <form @submit.prevent="submitForm">
+      <label for="type">Тип:</label>
+      <select v-model="type" id="type">
+        <option value="income">Доход</option>
+        <option value="expense">Расход</option>
+      </select>
+
+      <label for="amount">Сумма:</label>
+      <input v-model="amount" type="number" id="amount" required />
+
+      <label for="category">Категория:</label>
+      <select v-model="category" id="category">
+        <option v-for="cat in categories" :key="cat" :value="cat">
+          {{ cat }}
+        </option>
+      </select>
+
+      <label for="date">Дата:</label>
+      <input v-model="date" type="date" id="date" />
+
+      <button type="submit">Добавить</button>
+    </form>
+  </div>
+</template>
