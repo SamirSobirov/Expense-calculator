@@ -38,12 +38,10 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 .transaction {
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
 }
-
 </style>
