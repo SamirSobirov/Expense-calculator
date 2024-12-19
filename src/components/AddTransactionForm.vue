@@ -1,3 +1,41 @@
+<template>
+  <div>
+    <h2>Добавить новую транзакцию</h2>
+
+    <div class="addBox">
+      <form @submit.prevent="submitForm">
+        <div>
+          <label for="type">Тип:</label>
+          <select v-model="type" id="type">
+            <option value="income">Доход</option>
+            <option value="expense">Расход</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="amount">Сумма:</label>
+          <input v-model="amount" type="number" id="amount" required />
+        </div>
+
+        <div>
+          <label for="category">Категория:</label>
+          <select v-model="category" id="category">
+            <option v-for="cat in categories" :key="cat" :value="cat">
+              {{ cat }}
+            </option>
+          </select>
+        </div>
+
+        <div>
+          <label for="date">Дата:</label>
+          <input v-model="date" type="date" id="date" />
+        </div>
+        <button type="submit">Добавить</button>
+      </form>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref } from "vue";
 import { defineEmits } from "vue";
@@ -22,53 +60,13 @@ const submitForm = () => {
 };
 </script>
 
-<template>
-  <div>
-    <h2>Добавить новую транзакцию</h2>
-
-    <div class="addBox">
-    <form @submit.prevent="submitForm">
-      <div>
-      <label for="type">Тип:</label>
-      <select v-model="type" id="type">
-        <option value="income">Доход</option>
-        <option value="expense">Расход</option>
-      </select>
-    </div>
-
-      <div>
-      <label for="amount">Сумма:</label>
-      <input v-model="amount" type="number" id="amount" required />
-    </div>
-
-    <div>
-      <label for="category">Категория:</label>
-      <select v-model="category" id="category">
-        <option v-for="cat in categories" :key="cat" :value="cat">
-          {{ cat }}
-        </option>
-      </select>
-    </div>
-
-    <div>
-      <label for="date">Дата:</label>
-      <input v-model="date" type="date" id="date" />
-    </div>
-      <button type="submit">Добавить</button>
-    </form>
-  </div>
-  </div>
-</template>
-
 <style lang="scss">
-  .addBox {
-    align-items: center;
-    justify-content: center;
-;
-    form {
-      display: flex;
-      gap: 20px
-    }
+.addBox {
+  align-items: center;
+  justify-content: center;
+  form {
+    display: flex;
+    gap: 20px;
   }
+}
 </style>
-
