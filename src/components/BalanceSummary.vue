@@ -20,9 +20,9 @@ div {
     color: #ff0000;
   }
 
-  p{
+  p {
     color: #1d2cff;
-    font-size: 17px;
+    font-size: 22px;
   }
 }
 </style>
