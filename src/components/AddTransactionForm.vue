@@ -66,6 +66,31 @@ const submitForm = () => {
   form {
     display: flex;
     gap: 20px;
+    
+    div {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;  
+    }
+  }
+  #category {
+    width: 120px;
+    height: 30px;
+  }
+
+  #amount {
+     width: 120px;
+    height: 30px;
+  }
+  #date {
+    width: 120px;
+    height: 30px;
+  }
+
+  #type {
+    width: 120px;
+    height: 30px;
   }
 }
 </style>
