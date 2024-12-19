@@ -10,12 +10,10 @@
             <option value="expense">Расход</option>
           </select>
         </div>
-
         <div>
           <label for="amount">Сумма:</label>
           <input v-model="amount" type="number" id="amount" required />
         </div>
-
         <div>
           <label for="category">Категория:</label>
           <select v-model="category" id="category">
@@ -24,7 +22,6 @@
             </option>
           </select>
         </div>
-
         <div>
           <label for="date">Дата:</label>
           <input v-model="date" type="date" id="date" />
@@ -78,7 +75,6 @@ const submitForm = () => {
     width: 120px;
     height: 30px;
   }
-
   #amount {
     width: 120px;
     height: 30px;
@@ -87,7 +83,6 @@ const submitForm = () => {
     width: 120px;
     height: 30px;
   }
-
   #type {
     width: 120px;
     height: 30px;
