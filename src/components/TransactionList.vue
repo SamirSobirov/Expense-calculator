@@ -41,7 +41,12 @@ export default {
 <style lang="scss" scoped>
 .transaction {
   margin: 10px 0;
-  padding: 10px;
+  padding: 15px;
+  border-radius: 12px;
   border: 1px solid #ccc;
+  background-color: #9fc2ff;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 19px;
 }
 </style>

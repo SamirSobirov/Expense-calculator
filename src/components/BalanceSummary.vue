@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Баланс:</h2>
-    <p>Общий баланс: {{ balance }}$</p>
+    <p><b>Общий баланс: {{ balance }}$ </b></p>
   </div>
 </template>
 
@@ -21,7 +21,8 @@ div {
 
   p {
     color: #1d2cff;
-    font-size: 22px;
+    font-size: 25px;
+
   }
 }
 </style>
