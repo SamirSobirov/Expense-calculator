@@ -87,6 +87,21 @@ const submitForm = () => {
     width: 120px;
     height: 30px;
   }
+
+
+  button {
+    width: 120px;
+    height: 38px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #acd0ff;
+    }
+  }
 }
 </style>
   

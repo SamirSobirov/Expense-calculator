@@ -11,13 +11,12 @@ const { balance } = defineProps<{ balance: number }>();
 
 <style lang="scss" scoped>
 div {
-  margin: 10px;
+
   padding: 10px;
-  border: 1px solid #6dff37;
-  background-color: #b1ff95;
+  background-color: #acd0ff;
   border-radius: 12px;
   h2 {
-    color: #ff0000;
+    color: brown;
   }
 
   p {
