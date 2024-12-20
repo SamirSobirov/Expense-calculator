@@ -38,6 +38,4 @@ const addTransaction = (transaction: any) => {
 
   }
 }
-
-
 </style>
