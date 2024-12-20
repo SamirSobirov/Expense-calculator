@@ -28,14 +28,13 @@ const addTransaction = (transaction: any) => {
 .app {
   max-width: 900px;
   margin: 0 auto;
-  
+
   h1 {
     background-color: #acd0ff;
     text-align: center;
     color: #0077ff;
     padding: 10px;
     border-radius: 12px;
-
   }
 }
 </style>
